@@ -36,7 +36,7 @@ To add a new blog post:
      <div class="nav-bar">
          <div class="site-title">Meet Shah's Blog</div>
          <div class="nav-links">
-             <a href="/blogs/">Blog Home</a>
+             <a href="../../">Blog Home</a>
              <a href="https://shahmeetk.github.io/">Portfolio</a>
              <a href="https://github.com/shahmeetk" target="_blank">GitHub</a>
          </div>
