@@ -222,3 +222,32 @@ footer {
         gap: 20px;
     }
 }
+
+/* Code Container Styles */
+.code-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+}
+
+.code-container code {
+    background-color: #f5f5f5;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.code-container ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.code-container li {
+    margin-bottom: 10px;
+}
+
+.alternate {
+    background-color: #f8fafc;
+}
