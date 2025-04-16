@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Shah - Technical Blog</title>
-    <link rel="stylesheet" href="assets/css/blog-styles.css">
+    <title>Meet Shah - AI & Tech Blog</title>
+    <link rel="stylesheet" href="assets/css/ai-tech-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
@@ -13,21 +13,30 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Meet Shah</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-brain"></i></span>
+                Meet Shah
+            </a>
             <div class="nav-links">
-                <a href="index.html">Blog</a>
-                <a href="https://shahmeetk.github.io">Portfolio</a>
-                <a href="https://github.com/shahmeetk" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/meetshah10290/" target="_blank">LinkedIn</a>
+                <a href="index.html" class="nav-link active">Blog</a>
+                <a href="https://shahmeetk.github.io" class="nav-link">Portfolio</a>
+                <a href="https://github.com/shahmeetk" class="nav-link" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/meetshah10290/" class="nav-link" target="_blank">LinkedIn</a>
             </div>
         </div>
     </nav>
 
     <!-- Header -->
-    <header>
+    <header class="header">
         <div class="container">
-            <h1>Meet Shah's Technical Blog</h1>
-            <p>Insights on AI, Cloud Management, and DevSecOps</p>
+            <div class="header-content animate-fade-in">
+                <h1 class="header-title">AI & Tech Insights</h1>
+                <p class="header-subtitle">Exploring AI, Cloud Management, and DevSecOps with Meet Shah</p>
+                <div class="ai-badge">
+                    <i class="fas fa-robot ai-badge-icon"></i>
+                    Powered by AI & Human Expertise
+                </div>
+            </div>
         </div>
     </header>
 
@@ -36,39 +45,53 @@
         <section class="section">
             <h2 class="section-title">Featured Posts</h2>
             <div class="blog-grid">
-                <article class="blog-card">
+                <article class="blog-card animate-fade-in">
                     <div class="blog-image">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Building a Professional Tech Portfolio">
                     </div>
                     <div class="blog-content">
-                        <h3>Building a Professional Tech Portfolio with GitHub Pages</h3>
+                        <h3 class="blog-title">Building a Professional Tech Portfolio with GitHub Pages</h3>
                         <div class="blog-meta">
-                            <span class="date">
+                            <span class="blog-meta-item">
                                 <i class="far fa-calendar-alt"></i>
                                 April 16, 2024
                             </span>
+                            <span class="blog-meta-item">
+                                <i class="far fa-clock"></i>
+                                10 min read
+                            </span>
                         </div>
                         <p class="blog-excerpt">A comprehensive guide on creating your own professional portfolio using GitHub Pages, with code examples and best practices.</p>
-                        <a href="../posts/building-portfolio-with-github-pages.html" class="read-more">Read More</a>
+                        <a href="../posts/building-portfolio-with-github-pages.html" class="read-more">
+                            Read More
+                            <i class="fas fa-arrow-right read-more-icon"></i>
+                        </a>
                     </div>
                 </article>
 
                 <!-- Template for new blog posts (commented out) -->
                 <!--
-                <article class="blog-card">
+                <article class="blog-card animate-fade-in">
                     <div class="blog-image">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blog Post Title">
                     </div>
                     <div class="blog-content">
-                        <h3>Blog Post Title</h3>
+                        <h3 class="blog-title">Blog Post Title</h3>
                         <div class="blog-meta">
-                            <span class="date">
+                            <span class="blog-meta-item">
                                 <i class="far fa-calendar-alt"></i>
                                 Date
                             </span>
+                            <span class="blog-meta-item">
+                                <i class="far fa-clock"></i>
+                                Read time
+                            </span>
                         </div>
                         <p class="blog-excerpt">Brief description of your blog post.</p>
-                        <a href="../posts/blog-post-url.html" class="read-more">Read More</a>
+                        <a href="../posts/blog-post-url.html" class="read-more">
+                            Read More
+                            <i class="fas fa-arrow-right read-more-icon"></i>
+                        </a>
                     </div>
                 </article>
                 -->
@@ -77,14 +100,14 @@
 
         <!-- Topics Section -->
         <section class="section">
-            <h2 class="section-title">Topics</h2>
+            <h2 class="section-title">Explore Topics</h2>
             <div class="tags">
-                <a href="#" class="tag">AI & Machine Learning</a>
-                <a href="#" class="tag">Cloud Architecture</a>
-                <a href="#" class="tag">DevSecOps</a>
-                <a href="#" class="tag">GitHub Pages</a>
-                <a href="#" class="tag">Web Development</a>
-                <a href="#" class="tag">Automation</a>
+                <a href="#" class="tag"><i class="fas fa-brain"></i> AI & Machine Learning</a>
+                <a href="#" class="tag"><i class="fas fa-cloud"></i> Cloud Architecture</a>
+                <a href="#" class="tag"><i class="fas fa-shield-alt"></i> DevSecOps</a>
+                <a href="#" class="tag"><i class="fab fa-github"></i> GitHub Pages</a>
+                <a href="#" class="tag"><i class="fas fa-code"></i> Web Development</a>
+                <a href="#" class="tag"><i class="fas fa-robot"></i> Automation</a>
             </div>
         </section>
 
@@ -93,26 +116,70 @@
             <h2 class="section-title">About This Blog</h2>
             <div class="blog-post-content">
                 <p>Welcome to my technical blog! I'm Meet Shah, a technology professional specializing in AI, Cloud Management, and DevSecOps. This blog is a collection of my thoughts, tutorials, and insights on various technical topics.</p>
+
+                <div class="ai-generated">
+                    <p>The content on this blog combines human expertise with AI assistance to provide you with the most accurate, up-to-date, and valuable information. I leverage AI tools to enhance research, improve clarity, and ensure technical accuracy while maintaining my personal voice and professional insights.</p>
+                </div>
+
                 <p>My goal is to share practical knowledge and experiences that can help other professionals in the tech industry. Whether you're a seasoned developer or just starting your journey in tech, I hope you'll find valuable content here.</p>
+
                 <p>Feel free to explore the blog posts, and don't hesitate to reach out if you have any questions or suggestions for future topics!</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="copyright">
-                    <p>&copy; 2024 Meet Shah. All rights reserved.</p>
+                <a href="index.html" class="footer-logo">
+                    <i class="fas fa-brain"></i>
+                    Meet Shah
+                </a>
+
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Blog</a>
+                    <a href="https://shahmeetk.github.io" class="footer-link">Portfolio</a>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="mailto:shahmeetk@gmail.com" class="footer-link">Contact</a>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/shahmeetk" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/meetshah10290/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:shahmeetk@gmail.com"><i class="far fa-envelope"></i></a>
+
+                <div class="footer-social">
+                    <a href="https://github.com/shahmeetk" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/meetshah10290/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:shahmeetk@gmail.com" class="social-link">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Meet Shah. All rights reserved.
+                </div>
+                <div>
+                    <span class="ai-badge">
+                        <i class="fas fa-robot ai-badge-icon"></i>
+                        AI-Enhanced Content
+                    </span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Simple animation script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add staggered animation to blog cards
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>
