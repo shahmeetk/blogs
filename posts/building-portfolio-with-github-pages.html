@@ -4,90 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building a Professional Tech Portfolio with GitHub Pages - Meet Shah's Blog</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #0366d6;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #0366d6;
-            border-bottom: 2px solid #0366d6;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-        .blog-content {
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        code {
-            background-color: #f1f1f1;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-family: monospace;
-        }
-        pre {
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #f1f1f1;
-            border-top: 1px solid #ddd;
-        }
-    </style>
+    <link rel="stylesheet" href="../blogs/assets/css/blog-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../blogs/index.html" class="logo">Meet Shah</a>
+            <div class="nav-links">
+                <a href="../blogs/index.html">Blog</a>
+                <a href="https://shahmeetk.github.io">Portfolio</a>
+                <a href="https://github.com/shahmeetk" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/meetshah10290/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
     <header>
         <div class="container">
             <h1>Building a Professional Tech Portfolio with GitHub Pages</h1>
-            <p>April 16, 2024</p>
+            <p>A step-by-step guide to showcase your skills and projects</p>
         </div>
     </header>
 
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Blog</a>
-        
-        <div class="blog-content">
+    <main class="container">
+        <a href="../blogs/index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+
+        <article class="blog-post-content">
+            <div class="blog-post-meta">
+                <span class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    April 16, 2024
+                </span>
+                <span class="author">
+                    <i class="far fa-user"></i>
+                    Meet Shah
+                </span>
+            </div>
+
+            <div class="tags">
+                <a href="#" class="tag">GitHub Pages</a>
+                <a href="#" class="tag">Web Development</a>
+                <a href="#" class="tag">Portfolio</a>
+                <a href="#" class="tag">Career</a>
+            </div>
+
             <h2>Introduction</h2>
             <p>In today's competitive tech industry, having a professional portfolio is essential to showcase your skills and projects to potential employers. GitHub Pages offers a free and easy way to host your portfolio website directly from your GitHub repository.</p>
-            
+
             <h2>Why GitHub Pages?</h2>
             <p>GitHub Pages provides several advantages for hosting your tech portfolio:</p>
             <ul>
@@ -97,48 +67,141 @@
                 <li>Version control for your website content</li>
                 <li>Simple deployment process</li>
             </ul>
-            
+
             <h2>Getting Started</h2>
             <p>To create your portfolio with GitHub Pages, follow these steps:</p>
-            
+
             <h3>1. Create a new repository</h3>
             <p>Create a new GitHub repository named <code>username.github.io</code>, where "username" is your GitHub username.</p>
-            
+
             <h3>2. Clone the repository</h3>
             <pre><code>git clone https://github.com/username/username.github.io.git
 cd username.github.io</code></pre>
-            
+
             <h3>3. Create your website</h3>
-            <p>Create an index.html file and any other files you need for your portfolio.</p>
-            
+            <p>Create an index.html file and any other files you need for your portfolio. Here's a simple example to get you started:</p>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Name - Portfolio&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Your Name&lt;/h1&gt;
+        &lt;p&gt;Web Developer | Designer | Tech Enthusiast&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;section id="about"&gt;
+        &lt;h2&gt;About Me&lt;/h2&gt;
+        &lt;p&gt;A brief description about yourself and your skills.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="projects"&gt;
+        &lt;h2&gt;Projects&lt;/h2&gt;
+        &lt;div class="project"&gt;
+            &lt;h3&gt;Project Title&lt;/h3&gt;
+            &lt;p&gt;Project description and technologies used.&lt;/p&gt;
+            &lt;a href="#"&gt;View Project&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id="contact"&gt;
+        &lt;h2&gt;Contact Me&lt;/h2&gt;
+        &lt;p&gt;Email: your.email@example.com&lt;/p&gt;
+        &lt;p&gt;LinkedIn: &lt;a href="#"&gt;Your LinkedIn&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;GitHub: &lt;a href="#"&gt;Your GitHub&lt;/a&gt;&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 Your Name. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
             <h3>4. Push your changes</h3>
             <pre><code>git add .
 git commit -m "Initial commit"
 git push -u origin main</code></pre>
-            
+
             <h3>5. Visit your website</h3>
             <p>Your portfolio is now live at <code>https://username.github.io</code>!</p>
-            
+
+            <h2>Customizing Your Portfolio</h2>
+            <p>Now that you have a basic portfolio, it's time to customize it to showcase your skills and projects effectively:</p>
+
+            <h3>Add a professional photo</h3>
+            <p>Include a professional headshot or avatar to make your portfolio more personal.</p>
+
+            <h3>Showcase your best projects</h3>
+            <p>Create detailed project sections with:</p>
+            <ul>
+                <li>Project title and description</li>
+                <li>Technologies and skills used</li>
+                <li>Screenshots or demos</li>
+                <li>Links to live demos and GitHub repositories</li>
+            </ul>
+
+            <h3>List your skills and expertise</h3>
+            <p>Create a dedicated section to highlight your technical skills, tools, and technologies you're proficient in.</p>
+
+            <h3>Include your experience and education</h3>
+            <p>Add sections for your work experience and educational background to give visitors a complete picture of your qualifications.</p>
+
+            <h3>Add contact information and social links</h3>
+            <p>Make it easy for potential employers to reach you by including your email, LinkedIn, GitHub, and other relevant social profiles.</p>
+
             <h2>Best Practices</h2>
             <p>Here are some best practices for creating an effective tech portfolio:</p>
             <ul>
                 <li>Keep the design clean and professional</li>
-                <li>Showcase your best projects with descriptions and links</li>
-                <li>Include your skills, experience, and education</li>
-                <li>Add contact information and links to your social profiles</li>
                 <li>Ensure your website is responsive and works on all devices</li>
+                <li>Optimize images and assets for fast loading</li>
+                <li>Use proper HTML semantics for accessibility</li>
+                <li>Include a clear call-to-action for visitors</li>
                 <li>Regularly update your portfolio with new projects and skills</li>
+                <li>Add testimonials or recommendations if available</li>
+                <li>Include a downloadable resume</li>
             </ul>
-            
+
             <h2>Conclusion</h2>
             <p>Creating a professional tech portfolio with GitHub Pages is a simple yet effective way to showcase your skills and projects. By following the steps and best practices outlined in this guide, you can create a portfolio that stands out to potential employers and helps advance your career in tech.</p>
-        </div>
-    </div>
 
+            <p>Remember to keep your portfolio updated with your latest projects and skills, and don't be afraid to iterate on the design and content based on feedback.</p>
+
+            <div class="share-buttons">
+                <a href="#" class="share-button" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="share-button" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="share-button" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="share-button" title="Share via Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Meet Shah. All rights reserved.</p>
-            <p><a href="https://github.com/shahmeetk">GitHub</a> | <a href="https://shahmeetk.github.io">Portfolio</a></p>
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2024 Meet Shah. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/shahmeetk" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/meetshah10290/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:shahmeetk@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
