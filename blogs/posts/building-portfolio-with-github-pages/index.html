@@ -13,6 +13,7 @@
             --accent-color: #0284c7;
             --border-color: #e6e6e6;
             --code-background: #f5f5f5;
+            --nav-background: #0284c7;
         }
 
         * {
@@ -143,6 +144,40 @@
             margin-bottom: 30px;
         }
 
+        .nav-bar {
+            background-color: var(--nav-background);
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            margin: -20px -20px 20px -20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: rgba(255,255,255,0.2);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding: 15px;
@@ -163,22 +198,36 @@
             p {
                 font-size: 1rem;
             }
+
+            .nav-bar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="nav-bar">
+        <div class="site-title">Meet Shah's Blog</div>
+        <div class="nav-links">
+            <a href="/blogs/">Blog Home</a>
+            <a href="https://shahmeetk.github.io/">Portfolio</a>
+            <a href="https://github.com/shahmeetk" target="_blank">GitHub</a>
+        </div>
+    </div>
     <header>
         <h1>Building a Professional Tech Portfolio with GitHub Pages</h1>
-        <div class="subtitle">A comprehensive guide based on my experience creating <a href="https://shahmeetk.github.io/Resume/" target="_blank">https://shahmeetk.github.io/Resume/</a></div>
+        <div class="subtitle">A comprehensive guide based on my experience creating <a href="https://shahmeetk.github.io/" target="_blank">https://shahmeetk.github.io/</a></div>
     </header>
 
     <main>
-        <img src="../images/prof2.jpg" alt="Portfolio Banner">
+        <img src="assets/images/prof2.jpg" alt="Portfolio Banner">
         <div class="image-caption">My professional portfolio showcasing AI, Cloud, and DevSecOps expertise</div>
 
         <p>In today's competitive tech landscape, having a standout professional portfolio is no longer optional—it's essential. As a Cloud & AI Practice Lead specializing in AIOps and DevSecOps, I recently rebuilt my portfolio using GitHub Pages to showcase my expertise in a way that resonates with recruiters and peers alike.</p>
 
-        <p>In this guide, I'll walk you through the exact process I used to create <a href="https://shahmeetk.github.io/Resume/" target="_blank">my portfolio</a>, from initial setup to deployment and optimization.</p>
+        <p>In this guide, I'll walk you through the exact process I used to create <a href="https://shahmeetk.github.io/" target="_blank">my portfolio</a>, from initial setup to deployment and optimization.</p>
 
         <h2>Why GitHub Pages?</h2>
 
@@ -432,7 +481,7 @@ jobs:
 
         <h2>Results and Benefits</h2>
 
-        <p>Since launching my portfolio at <a href="https://shahmeetk.github.io/Resume/" target="_blank">https://shahmeetk.github.io/Resume/</a>, I've received positive feedback from recruiters and peers alike. The benefits have been numerous:</p>
+        <p>Since launching my portfolio at <a href="https://shahmeetk.github.io/" target="_blank">https://shahmeetk.github.io/</a>, I've received positive feedback from recruiters and peers alike. The benefits have been numerous:</p>
 
         <ol>
             <li><strong>Increased visibility</strong> in my professional network</li>
@@ -448,7 +497,7 @@ jobs:
 
         <p>By following this guide, you can create a portfolio that not only looks professional but also effectively communicates your value to potential employers or clients.</p>
 
-        <p>Feel free to explore my portfolio at <a href="https://shahmeetk.github.io/Resume/" target="_blank">https://shahmeetk.github.io/Resume/</a> for inspiration, and don't hesitate to reach out if you have any questions!</p>
+        <p>Feel free to explore my portfolio at <a href="https://shahmeetk.github.io/" target="_blank">https://shahmeetk.github.io/</a> for inspiration, and don't hesitate to reach out if you have any questions!</p>
     </main>
 
     <div class="author-info">

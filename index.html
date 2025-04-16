@@ -3,87 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Shah - Technical Blog</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Meet Shah - Technical Content</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8fafc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #0284c7;
+            margin-bottom: 30px;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .content-box h2 {
+            color: #0284c7;
+            margin-top: 0;
+        }
+        a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0284c7;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0369a1;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        .footer {
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="profile-info">
-                    <h1>Meet Shah</h1>
-                    <h2>Technical Blog</h2>
-                    <p>Insights on AI, Cloud Management, and DevSecOps</p>
-                    <div class="header-buttons">
-                        <a href="https://shahmeetk.github.io" class="btn primary">View Portfolio</a>
-                        <a href="https://github.com/shahmeetk" class="btn secondary">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <h1>Meet Shah</h1>
 
-    <section id="blog-posts" class="section">
-        <div class="container">
-            <h2 class="section-title">Blog Posts</h2>
-            
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <h3>Building a Professional Tech Portfolio with GitHub Pages</h3>
-                        <p class="blog-meta">April 16, 2024</p>
-                        <p>A comprehensive guide on creating your own professional portfolio using GitHub Pages, with code examples and best practices.</p>
-                        <a href="posts/building-portfolio-with-github-pages.html" class="read-more">Read More</a>
-                    </div>
-                </div>
-                
-                <!-- Template for adding new blog posts -->
-                <!--
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <h3>Title of Your New Blog Post</h3>
-                        <p class="blog-meta">Date</p>
-                        <p>Brief description of your blog post.</p>
-                        <a href="posts/your-new-blog-post.html" class="read-more">Read More</a>
-                    </div>
-                </div>
-                -->
-            </div>
-        </div>
-    </section>
+    <div class="content-box">
+        <h2>Welcome to My Technical Content</h2>
+        <p>This page serves as a hub for my technical content. You can explore the following resources:</p>
+        <ul>
+            <li><a href="https://shahmeetk.github.io/">Professional Portfolio</a> - My main portfolio showcasing my professional experience and skills</li>
+            <li><a href="blogs/">Technical Blog</a> - In-depth articles on AI, Cloud Management, and DevSecOps</li>
+        </ul>
+        <a href="blogs/" class="btn">Visit My Technical Blog</a>
+    </div>
 
-    <section id="add-blog" class="section alternate">
-        <div class="container">
-            <h2 class="section-title">How to Add a New Blog Post</h2>
-            <div class="code-container">
-                <p>To add a new blog post, follow these steps:</p>
-                <ol>
-                    <li>Create a new HTML file in the <code>posts/</code> directory with a descriptive name (e.g., <code>posts/implementing-aiops-solutions.html</code>)</li>
-                    <li>Add any images to the <code>assets/images/</code> directory</li>
-                    <li>Update the <code>index.html</code> file to include a link to the new blog post by copying and modifying the template in the comments</li>
-                    <li>Commit and push the changes</li>
-                </ol>
-                <p>The blog post will automatically be deployed to GitHub Pages.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">
-                    <p>&copy; 2024 Meet Shah. All rights reserved.</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/shahmeetk" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/meetshah10290/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
+    <div class="footer">
+        <p>&copy; 2024 Meet Shah. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/shahmeetk" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/meetshah10290/" target="_blank">LinkedIn</a>
+        </p>
+    </div>
 </body>
 </html>
