@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Shah - Technical Blog</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXYSSSTTMB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WXYSSSTTMB');
+    </script>
+    
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -94,5 +104,37 @@
             <p>&copy; 2024 Meet Shah. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        // Track external link clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const externalLinks = document.querySelectorAll('a[href^="http"]');
+            externalLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('href');
+                    gtag('event', 'click', {
+                        'event_category': 'external_link',
+                        'event_label': url,
+                        'value': 1
+                    });
+                    console.log('External link click tracked: ' + url);
+                });
+            });
+            
+            // Track blog post clicks
+            const blogPostLinks = document.querySelectorAll('a[href^="posts/"]');
+            blogPostLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const postTitle = this.closest('.blog-post').querySelector('h3').textContent;
+                    gtag('event', 'view_item', {
+                        'event_category': 'blog',
+                        'event_label': postTitle,
+                        'value': 1
+                    });
+                    console.log('Blog post click tracked: ' + postTitle);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
