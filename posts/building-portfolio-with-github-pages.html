@@ -281,15 +281,29 @@ git push -u origin main</code></pre>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
 
-    <!-- Copy code functionality -->
+    <!-- Copy code functionality and analytics tracking -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Track page view with custom dimension
+            gtag('event', 'page_view', {
+                'page_title': document.title,
+                'page_location': window.location.href,
+                'page_path': window.location.pathname
+            });
+
             // Copy code functionality
             const copyButtons = document.querySelectorAll('.code-copy');
             copyButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const codeBlock = this.parentElement.nextElementSibling.querySelector('code');
                     const textToCopy = codeBlock.textContent;
+
+                    // Track code copy event
+                    gtag('event', 'copy_code', {
+                        'event_category': 'engagement',
+                        'event_label': this.parentElement.querySelector('.code-language').textContent,
+                        'value': 1
+                    });
 
                     navigator.clipboard.writeText(textToCopy).then(() => {
                         // Change button icon temporarily
@@ -299,6 +313,50 @@ git push -u origin main</code></pre>
                             this.innerHTML = originalIcon;
                         }, 2000);
                     });
+                });
+            });
+
+            // Track external link clicks
+            const externalLinks = document.querySelectorAll('a[href^="http"]');
+            externalLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('href');
+                    gtag('event', 'click', {
+                        'event_category': 'external_link',
+                        'event_label': url,
+                        'value': 1
+                    });
+                    console.log('External link click tracked: ' + url);
+                });
+            });
+
+            // Track share button clicks
+            const shareButtons = document.querySelectorAll('.share-button');
+            shareButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const platform = this.classList.contains('twitter') ? 'Twitter' :
+                                    this.classList.contains('linkedin') ? 'LinkedIn' :
+                                    this.classList.contains('facebook') ? 'Facebook' : 'Email';
+                    gtag('event', 'share', {
+                        'event_category': 'social',
+                        'event_label': platform,
+                        'value': 1
+                    });
+                    console.log('Share click tracked: ' + platform);
+                });
+            });
+
+            // Track navigation link clicks
+            const navLinks = document.querySelectorAll('.nav-link, .footer-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const linkText = this.textContent.trim();
+                    gtag('event', 'navigation', {
+                        'event_category': 'navigation',
+                        'event_label': linkText,
+                        'value': 1
+                    });
+                    console.log('Navigation click tracked: ' + linkText);
                 });
             });
         });
