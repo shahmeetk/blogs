@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXYSSSTTMB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WXYSSSTTMB');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Professional Tech Portfolio with GitHub Pages - Meet Shah's Blog</title>
+    <link rel="stylesheet" href="../assets/css/tech-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- Add syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                Meet Shah
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link active">Blog</a>
+                <a href="https://shahmeetk.github.io" class="nav-link">Portfolio</a>
+                <a href="https://github.com/shahmeetk" class="nav-link" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/meetshah10290/" class="nav-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content animate-fade-in">
+                <h1 class="header-title">Building a Professional Tech Portfolio</h1>
+                <p class="header-subtitle">A step-by-step guide to showcase your skills and projects with GitHub Pages</p>
+                <div class="tech-badge">
+                    <i class="fab fa-github tech-badge-icon"></i>
+                    GitHub Pages Tutorial
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+
+        <article class="blog-post animate-fade-in">
+            <div class="blog-post-meta">
+                <div class="blog-post-meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    April 16, 2024
+                </div>
+                <div class="blog-post-meta-item">
+                    <i class="far fa-user"></i>
+                    Meet Shah
+                </div>
+                <div class="blog-post-meta-item">
+                    <i class="far fa-clock"></i>
+                    10 min read
+                </div>
+            </div>
+
+            <div class="tags">
+                <a href="#" class="tag"><i class="fab fa-github"></i> GitHub Pages</a>
+                <a href="#" class="tag"><i class="fas fa-code"></i> Web Development</a>
+                <a href="#" class="tag"><i class="fas fa-briefcase"></i> Portfolio</a>
+                <a href="#" class="tag"><i class="fas fa-user-tie"></i> Career</a>
+            </div>
+
+            <div class="blog-post-content">
+                <h2>Introduction</h2>
+                <p>In today's competitive tech industry, having a professional portfolio is essential to showcase your skills and projects to potential employers. GitHub Pages offers a free and easy way to host your portfolio website directly from your GitHub repository.</p>
+
+                <h2>Why GitHub Pages?</h2>
+                <p>GitHub Pages provides several advantages for hosting your tech portfolio:</p>
+                <ul>
+                    <li><strong>Free hosting</strong> with no ads</li>
+                    <li><strong>Custom domain</strong> support</li>
+                    <li><strong>Seamless integration</strong> with your GitHub projects</li>
+                    <li><strong>Version control</strong> for your website content</li>
+                    <li><strong>Simple deployment</strong> process</li>
+                </ul>
+
+                <h2>Getting Started</h2>
+                <p>To create your portfolio with GitHub Pages, follow these steps:</p>
+
+                <h3>1. Create a new repository</h3>
+                <p>Create a new GitHub repository named <code>username.github.io</code>, where "username" is your GitHub username.</p>
+
+                <h3>2. Clone the repository</h3>
+                <div class="code-header">
+                    <span class="code-language">bash</span>
+                    <button class="code-copy" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                </div>
+                <pre><code class="language-bash">git clone https://github.com/username/username.github.io.git
+cd username.github.io</code></pre>
+
+                <h3>3. Create your website</h3>
+                <p>Create an index.html file and any other files you need for your portfolio. Here's a simple example to get you started:</p>
+
+                <div class="code-header">
+                    <span class="code-language">html</span>
+                    <button class="code-copy" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                </div>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Name - Portfolio&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Your Name&lt;/h1&gt;
+        &lt;p&gt;Web Developer | Designer | Tech Enthusiast&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;section id="about"&gt;
+        &lt;h2&gt;About Me&lt;/h2&gt;
+        &lt;p&gt;A brief description about yourself and your skills.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="projects"&gt;
+        &lt;h2&gt;Projects&lt;/h2&gt;
+        &lt;div class="project"&gt;
+            &lt;h3&gt;Project Title&lt;/h3&gt;
+            &lt;p&gt;Project description and technologies used.&lt;/p&gt;
+            &lt;a href="#"&gt;View Project&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id="contact"&gt;
+        &lt;h2&gt;Contact Me&lt;/h2&gt;
+        &lt;p&gt;Email: your.email@example.com&lt;/p&gt;
+        &lt;p&gt;LinkedIn: &lt;a href="#"&gt;Your LinkedIn&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;GitHub: &lt;a href="#"&gt;Your GitHub&lt;/a&gt;&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 Your Name. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <div class="tech-tip">
+                    <p>This HTML template provides a solid foundation for your portfolio. You can customize it further by adding your own styles, projects, and personal information. The structure follows best practices for semantic HTML, making it both accessible and easy to maintain.</p>
+                </div>
+
+                <h3>4. Push your changes</h3>
+                <div class="code-header">
+                    <span class="code-language">bash</span>
+                    <button class="code-copy" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                </div>
+                <pre><code class="language-bash">git add .
+git commit -m "Initial commit"
+git push -u origin main</code></pre>
+
+                <h3>5. Visit your website</h3>
+                <p>Your portfolio is now live at <code>https://username.github.io</code>!</p>
+
+                <h2>Customizing Your Portfolio</h2>
+                <p>Now that you have a basic portfolio, it's time to customize it to showcase your skills and projects effectively:</p>
+
+                <h3>Add a professional photo</h3>
+                <p>Include a professional headshot or avatar to make your portfolio more personal.</p>
+
+                <h3>Showcase your best projects</h3>
+                <p>Create detailed project sections with:</p>
+                <ul>
+                    <li>Project title and description</li>
+                    <li>Technologies and skills used</li>
+                    <li>Screenshots or demos</li>
+                    <li>Links to live demos and GitHub repositories</li>
+                </ul>
+
+                <h3>List your skills and expertise</h3>
+                <p>Create a dedicated section to highlight your technical skills, tools, and technologies you're proficient in.</p>
+
+                <h3>Include your experience and education</h3>
+                <p>Add sections for your work experience and educational background to give visitors a complete picture of your qualifications.</p>
+
+                <h3>Add contact information and social links</h3>
+                <p>Make it easy for potential employers to reach you by including your email, LinkedIn, GitHub, and other relevant social profiles.</p>
+
+                <h2>Best Practices</h2>
+                <p>Here are some best practices for creating an effective tech portfolio:</p>
+                <ul>
+                    <li>Keep the design clean and professional</li>
+                    <li>Ensure your website is responsive and works on all devices</li>
+                    <li>Optimize images and assets for fast loading</li>
+                    <li>Use proper HTML semantics for accessibility</li>
+                    <li>Include a clear call-to-action for visitors</li>
+                    <li>Regularly update your portfolio with new projects and skills</li>
+                    <li>Add testimonials or recommendations if available</li>
+                    <li>Include a downloadable resume</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Creating a professional tech portfolio with GitHub Pages is a simple yet effective way to showcase your skills and projects. By following the steps and best practices outlined in this guide, you can create a portfolio that stands out to potential employers and helps advance your career in tech.</p>
+
+                <p>Remember to keep your portfolio updated with your latest projects and skills, and don't be afraid to iterate on the design and content based on feedback.</p>
+
+                <div class="share-section">
+                    <h3 class="share-title">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="#" class="share-button twitter" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="share-button linkedin" title="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="share-button facebook" title="Share on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="share-button email" title="Share via Email">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="../index.html" class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    Meet Shah
+                </a>
+
+                <div class="footer-links">
+                    <a href="../index.html" class="footer-link">Blog</a>
+                    <a href="https://shahmeetk.github.io" class="footer-link">Portfolio</a>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="mailto:shahmeetk@gmail.com" class="footer-link">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://github.com/shahmeetk" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/meetshah10290/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:shahmeetk@gmail.com" class="social-link">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Meet Shah. All rights reserved.
+                </div>
+                <div>
+                    <span class="tech-badge">
+                        <i class="fas fa-code tech-badge-icon"></i>
+                        Tech Content
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Syntax highlighting for code blocks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+
+    <!-- Copy code functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Copy code functionality
+            const copyButtons = document.querySelectorAll('.code-copy');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const codeBlock = this.parentElement.nextElementSibling.querySelector('code');
+                    const textToCopy = codeBlock.textContent;
+
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        // Change button icon temporarily
+                        const originalIcon = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(() => {
+                            this.innerHTML = originalIcon;
+                        }, 2000);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
