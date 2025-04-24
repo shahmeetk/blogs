@@ -46,6 +46,44 @@ Update the `index.html` file to include your new blog post by copying and modify
 
 Add your new blog post to the list in this README.md file.
 
+### Step 6: Commit and Push
+
+Commit your changes and push them to the main branch:
+
+```bash
+git add posts/your-new-post-name.html posts/your-new-post-name/ index.html README.md
+git commit -m "Add new blog post: Your Post Title"
+git push origin main
+```
+
+The GitHub Actions workflow will automatically deploy your changes to GitHub Pages. You can check the status of the deployment in the "Actions" tab of the repository.
+
+## Repository Structure
+
+The repository is organized as follows:
+
+```text
+/
+├── index.html                  # Main blog landing page
+├── README.md                   # This file
+├── GITHUB_PAGES_SETUP.md       # Detailed GitHub Pages setup instructions
+├── .nojekyll                   # Tells GitHub Pages not to use Jekyll
+├── .github/                    # GitHub-specific files
+│   └── workflows/              # GitHub Actions workflows
+│       └── pages.yml           # Deployment workflow
+├── assets/                     # Shared assets
+│   └── css/                    # Stylesheets
+│       ├── tech-theme.css      # Main stylesheet
+│       └── ai-tech-theme.css   # Additional styles
+└── posts/                      # Blog posts
+    ├── template.html           # Template for new blog posts
+    ├── building-portfolio-with-github-pages.html  # Blog post 1
+    ├── llm-api-key-validator.html                 # Blog post 2
+    └── post-name/              # Directories for post-specific assets
+        └── assets/
+            └── images/         # Post-specific images
+```
+
 ## Blog Theme and Structure
 
 The blog uses a consistent theme across all posts:
@@ -121,6 +159,42 @@ A complete template for new blog posts is available in the `posts/template.html`
 ## Deployment
 
 The blog is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process is handled by GitHub Actions.
+
+### Deployment Process
+
+1. When changes are pushed to the main branch, a GitHub Actions workflow is triggered
+2. The workflow copies all content from the main branch to the gh-pages branch
+3. GitHub Pages serves the content from the gh-pages branch
+
+### GitHub Actions Workflow
+
+The deployment is managed by a GitHub Actions workflow file (`.github/workflows/pages.yml`). This workflow:
+
+- Triggers automatically when changes are pushed to the main branch
+- Uses the [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) to copy content to the gh-pages branch
+- Ensures that the gh-pages branch is always up-to-date with the main branch
+
+### GitHub Pages Configuration
+
+The repository is configured to serve content from the gh-pages branch. To ensure GitHub Pages deployment works correctly:
+
+1. Go to the repository on GitHub
+2. Click on "Settings"
+3. Scroll down to the "Pages" section in the left sidebar
+4. Under "Build and deployment":
+   - Source: Select "Deploy from a branch"
+   - Branch: Select "gh-pages" and "/ (root)"
+
+### Troubleshooting Deployment Issues
+
+If deployments are not working:
+
+1. Check the "Actions" tab in the repository to see if the workflow is running and if there are any errors
+2. Ensure the repository has GitHub Pages enabled in the repository settings
+3. Verify that the gh-pages branch exists and is properly configured in the Pages settings
+4. Check if there are any build errors in the GitHub Actions logs
+
+For more detailed information, see the [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) file.
 
 ## Navigation
 
