@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXYSSSTTMB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WXYSSSTTMB');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building an LLM API Key Validator: A Streamlit App for AI Developers - Meet Shah's Blog</title>
+    <link rel="stylesheet" href="../assets/css/tech-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- Add syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                Meet Shah
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link active">Blog</a>
+                <a href="https://shahmeetk.github.io" class="nav-link">Portfolio</a>
+                <a href="https://github.com/shahmeetk" class="nav-link" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/meetshah10290/" class="nav-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content animate-fade-in">
+                <h1 class="header-title">Building an LLM API Key Validator</h1>
+                <p class="header-subtitle">A comprehensive tool for validating and managing API keys across multiple AI providers</p>
+                <div class="tech-badge">
+                    <i class="fas fa-robot tech-badge-icon"></i>
+                    AI Development Tool
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+
+        <article class="blog-post animate-fade-in">
+            <div class="blog-post-meta">
+                <div class="blog-post-meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    April 24, 2024
+                </div>
+                <div class="blog-post-meta-item">
+                    <i class="far fa-user"></i>
+                    Meet Shah
+                </div>
+                <div class="blog-post-meta-item">
+                    <i class="far fa-clock"></i>
+                    12 min read
+                </div>
+            </div>
+
+            <div class="tags">
+                <a href="#" class="tag"><i class="fas fa-robot"></i> AI</a>
+                <a href="#" class="tag"><i class="fas fa-key"></i> API Keys</a>
+                <a href="#" class="tag"><i class="fab fa-python"></i> Python</a>
+                <a href="#" class="tag"><i class="fas fa-stream"></i> Streamlit</a>
+            </div>
+
+            <div class="blog-post-content">
+                <div class="project-overview">
+                    <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                    <p>An open-source Streamlit application that validates API keys for various LLM providers and displays quota/usage information in a user-friendly dashboard.</p>
+                    <a href="https://github.com/shahmeetk/AI-provider-Key-Validator" target="_blank" class="btn primary-btn">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <h2>Introduction</h2>
+                <p>As AI development becomes increasingly multi-provider, managing API keys across different platforms has become a significant challenge. Whether you're working with OpenAI, Anthropic, Groq, or any of the dozens of other LLM providers, each has its own authentication system, quota limits, and usage tracking.</p>
+
+                <p>To solve this problem, I built the <a href="https://github.com/shahmeetk/AI-provider-Key-Validator" target="_blank">LLM API Key Validator</a> - a comprehensive Streamlit application that allows developers to validate API keys across multiple providers and view their quota/usage information in a unified dashboard.</p>
+
+                <h2>The Challenge of Managing Multiple LLM API Keys</h2>
+
+                <p>AI developers today face several challenges when working with multiple LLM providers:</p>
+
+                <ul>
+                    <li><strong>Validity verification:</strong> Determining if an API key is still valid without making a full API call</li>
+                    <li><strong>Quota monitoring:</strong> Tracking remaining credits and usage across different platforms</li>
+                    <li><strong>Model availability:</strong> Identifying which models are accessible with a given API key</li>
+                    <li><strong>Rate limits:</strong> Understanding the rate limits associated with each key</li>
+                    <li><strong>Bulk validation:</strong> Testing multiple keys efficiently during migration or auditing</li>
+                </ul>
+
+                <p>These challenges are compounded when working in teams where keys may be shared or when managing multiple projects with different API requirements.</p>
+
+                <h2>Solution Architecture</h2>
+
+                <p>The LLM API Key Validator follows a modular architecture that separates concerns and makes the codebase maintainable and extensible.</p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/shahmeetk/AI-provider-Key-Validator/main/images/Architecture.png" alt="Architecture Diagram" class="blog-image">
+                    <p class="image-caption">Architecture diagram showing the layered design of the application</p>
+                </div>
+
+                <p>The application is structured into several key components:</p>
+
+                <ol>
+                    <li><strong>UI Layer:</strong> Streamlit-based interface with separate pages for single key validation, bulk validation, history, and provider information</li>
+                    <li><strong>Core Layer:</strong> Base classes for API keys and validators that define the core functionality</li>
+                    <li><strong>Validators Layer:</strong> Provider-specific validators that implement the validation logic for each LLM provider</li>
+                    <li><strong>Utils Layer:</strong> Utility functions for provider detection, storage, and logging</li>
+                    <li><strong>Data Layer:</strong> JSON files for storing provider information and validation history</li>
+                </ol>
+
+                <h2>Key Features</h2>
+
+                <h3>1. Multi-Provider Support</h3>
+
+                <p>The application supports a wide range of LLM providers, including:</p>
+
+                <ul>
+                    <li>OpenAI (GPT models)</li>
+                    <li>Anthropic (Claude models)</li>
+                    <li>Groq</li>
+                    <li>Mistral AI</li>
+                    <li>Cohere</li>
+                    <li>Google (Gemini models)</li>
+                    <li>OpenRouter</li>
+                    <li>Together AI</li>
+                    <li>Perplexity</li>
+                    <li>And many more...</li>
+                </ul>
+
+                <p>Each provider has a dedicated validator that understands the specific API endpoints and response formats.</p>
+
+                <h3>2. Automatic Provider Detection</h3>
+
+                <p>One of the most powerful features is the automatic detection of the provider based on the API key format. This means users don't need to specify which provider they're validating - the application figures it out automatically.</p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/shahmeetk/AI-provider-Key-Validator/main/images/DataFlow.png" alt="API Validation Process" class="blog-image">
+                    <p class="image-caption">The API validation process flow showing automatic provider detection</p>
+                </div>
+
+                <h3>3. Comprehensive Validation Results</h3>
+
+                <p>For each validated key, the application provides detailed information:</p>
+
+                <ul>
+                    <li>Validity status</li>
+                    <li>Available models and their capabilities</li>
+                    <li>Usage statistics and remaining credits</li>
+                    <li>Rate limits and token limits</li>
+                    <li>Account tier information</li>
+                </ul>
+
+                <h3>4. Bulk Validation</h3>
+
+                <p>For teams managing multiple keys, the bulk validation feature allows uploading a CSV file with multiple API keys and validating them all at once. The results can be downloaded as a CSV for further analysis or record-keeping.</p>
+
+                <h3>5. Validation History</h3>
+
+                <p>The application maintains a history of all validations, making it easy to track changes in key status over time. This is particularly useful for monitoring usage patterns and detecting when keys are approaching their limits.</p>
+
+                <h2>Technical Implementation</h2>
+
+                <h3>Modular Structure</h3>
+
+                <p>The project follows a clean, modular structure that makes it easy to extend and maintain:</p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/shahmeetk/AI-provider-Key-Validator/main/images/Modular%20Structure.png" alt="Modular Structure" class="blog-image">
+                    <p class="image-caption">Modular structure showing the organization of the codebase</p>
+                </div>
+
+                <h3>Asynchronous API Calls</h3>
+
+                <p>To improve performance, especially during bulk validation, the application uses asynchronous API calls with <code>aiohttp</code>. This allows multiple validations to run concurrently, significantly reducing the total validation time.</p>
+
+                <div class="code-header">
+                    <span class="code-language">python</span>
+                    <button class="code-copy" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                </div>
+                <pre><code class="language-python">async def validate(self, api_key: APIKey) -> APIKey:
+    """
+    Validate the API key against the provider's API.
+    
+    Args:
+        api_key: The API key to validate
+        
+    Returns:
+        The validated API key with updated information
+    """
+    if not isinstance(api_key, OpenAIKey):
+        return api_key
+    
+    url = "https://api.openai.com/v1/models"
+    headers = {
+        "Authorization": f"Bearer {api_key.api_key}"
+    }
+    
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.get(url, headers=headers, timeout=10) as response:
+                if response.status == 200:
+                    # Key is valid, extract model information
+                    api_key.is_valid = True
+                    api_key.message = "Valid API key"
+                    
+                    # Parse models information
+                    data = await response.json()
+                    # Process model data...
+                else:
+                    # Key is invalid
+                    api_key.is_valid = False
+                    api_key.message = f"Invalid API key: {response.status} {response.reason}"
+        except Exception as e:
+            api_key.is_valid = False
+            api_key.message = f"Error validating API key: {str(e)}"
+    
+    return api_key</code></pre>
+
+                <h3>Factory Pattern for Validators</h3>
+
+                <p>The application uses the factory pattern to create the appropriate validator for each provider. This makes it easy to add new providers without modifying existing code.</p>
+
+                <div class="code-header">
+                    <span class="code-language">python</span>
+                    <button class="code-copy" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                </div>
+                <pre><code class="language-python">class ValidatorFactory:
+    """Factory for creating validators for different providers."""
+    
+    @staticmethod
+    def create_validator(provider: Provider) -> Validator:
+        """
+        Create a validator for the specified provider.
+        
+        Args:
+            provider: The provider to create a validator for
+            
+        Returns:
+            A validator for the specified provider
+        """
+        if provider == Provider.OPENAI:
+            return OpenAIValidator()
+        elif provider == Provider.ANTHROPIC:
+            return AnthropicValidator()
+        elif provider == Provider.MISTRAL:
+            return MistralValidator()
+        # Additional providers...
+        else:
+            raise ValueError(f"No validator available for provider: {provider}")</code></pre>
+
+                <div class="tech-tip">
+                    <p>The factory pattern is particularly useful in this application because it allows for easy extension. When a new LLM provider emerges, you can simply add a new validator class and update the factory without changing any existing code. This follows the Open/Closed Principle: open for extension, closed for modification.</p>
+                </div>
+
+                <h2>Lessons Learned</h2>
+
+                <p>Building this project provided several valuable insights:</p>
+
+                <ol>
+                    <li><strong>API Inconsistency:</strong> Each provider has its own way of structuring APIs, response formats, and authentication methods. Creating a unified interface required careful abstraction.</li>
+                    <li><strong>Rate Limiting Challenges:</strong> When validating multiple keys, it's important to respect rate limits to avoid being temporarily blocked by providers.</li>
+                    <li><strong>Security Considerations:</strong> Handling API keys requires careful attention to security. The application never stores keys permanently unless explicitly requested by the user.</li>
+                    <li><strong>UI/UX Balance:</strong> Creating a technical tool that remains user-friendly required thoughtful UI design and clear presentation of complex information.</li>
+                </ol>
+
+                <h2>Future Enhancements</h2>
+
+                <p>The LLM API Key Validator is an ongoing project with several planned enhancements:</p>
+
+                <ul>
+                    <li>Support for additional LLM providers as they emerge</li>
+                    <li>Enhanced visualization of usage patterns over time</li>
+                    <li>Integration with cost estimation tools to predict spending</li>
+                    <li>API endpoint for programmatic validation from other applications</li>
+                    <li>Team collaboration features for shared key management</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+
+                <p>The LLM API Key Validator addresses a critical need in the AI development ecosystem by providing a unified interface for managing API keys across multiple providers. By automating validation and presenting quota information in a clear, consistent format, it helps developers focus on building AI applications rather than managing infrastructure.</p>
+
+                <p>The project is open-source and available on <a href="https://github.com/shahmeetk/AI-provider-Key-Validator" target="_blank">GitHub</a>. Contributions are welcome, whether in the form of new provider validators, feature enhancements, or documentation improvements.</p>
+
+                <p>As the AI landscape continues to evolve with new providers and models, tools like this will become increasingly important for developers working at the cutting edge of AI technology.</p>
+
+                <div class="share-section">
+                    <h3 class="share-title">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="#" class="share-button twitter" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="share-button linkedin" title="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="share-button facebook" title="Share on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="share-button email" title="Share via Email">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="../index.html" class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    Meet Shah
+                </a>
+
+                <div class="footer-links">
+                    <a href="../index.html" class="footer-link">Blog</a>
+                    <a href="https://shahmeetk.github.io" class="footer-link">Portfolio</a>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="mailto:shahmeetk@gmail.com" class="footer-link">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://github.com/shahmeetk" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/meetshah10290/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:shahmeetk@gmail.com" class="social-link">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Meet Shah. All rights reserved.
+                </div>
+                <div>
+                    <span class="tech-badge">
+                        <i class="fas fa-robot tech-badge-icon"></i>
+                        AI Content
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Syntax highlighting for code blocks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <!-- Copy code functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Copy code functionality
+            const copyButtons = document.querySelectorAll('.code-copy');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const codeBlock = this.parentElement.nextElementSibling.querySelector('code');
+                    const textToCopy = codeBlock.textContent;
+
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        // Change button icon temporarily
+                        const originalIcon = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(() => {
+                            this.innerHTML = originalIcon;
+                        }, 2000);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
